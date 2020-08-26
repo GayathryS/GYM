@@ -1,0 +1,11 @@
+/****** CODE ******/
+@media only screen and (max-width: 480px) {
+    #platinum {
+        margin-top: 50px;
+    }
+}
+@media only screen and (min-width: 1024px){
+    #platinum {
+        margin-top: 0px;
+    }
+}

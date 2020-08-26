@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GYM MANAGER</title>
+    <meta name="description" content="">
+    <link href="{{ url_for('static', filename = 'img/favicon.ico') }}" rel="shortcut icon">
+
+    <!-- Fonts -->
+    <link href="{{ url_for('static', filename = 'fonts/cloudicon/cloudicon.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'fonts/fontawesome/css/all.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'fonts/opensans/opensans.css') }}" rel="stylesheet">
+    <!-- CSS styles -->
+    <link href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/owl.carousel.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/magnific-popup.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/idangerous.swiper.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/custom.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/filter.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/style.min.css') }}" rel="stylesheet"> 
+    <!-- Custom color styles -->
+    <link href="{{ url_for('static', filename = 'css/colors/blue.css') }}" rel="stylesheet" title="blue"/>
+</head>
+
+<body>
+<section class="sec-normal sec-bg2">
+  <div id="table-container" class="table-responsive-lg">
+    <table id="maintable" class="table">
+      <thead>
+        <tr>
+          <td>
+            <div class="title">Member ID</div>
+          </td>
+          <td>
+            <div class="title">DAY</div>
+          </td>
+          <td>
+            <div class="title">TIME</div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for slot in message %}
+        <tr>
+          <td>{{slot.uid}}</td>
+          <td>{{slot.day}}</td>
+          <td>{{slot.time}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+</body>
