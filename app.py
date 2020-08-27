@@ -5,8 +5,8 @@ from data import *
 import uuid
 
 app = Flask(__name__)
-app.debug = True
-app.env = 'development'
+#app.debug = True
+#app.env = 'development'
 
 @app.route('/')
 def home_template():
