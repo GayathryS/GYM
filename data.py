@@ -52,5 +52,30 @@ def addtime(uid,day,time):
 def showtimes():
 	return appointments
 
+def appoin_exists(uid,day,time):
+	df = appointments[((appointments.id==uid)&(appointments.day==day)&(appointments.time==time))]
+	if len(df)>0:
+		return 1
+	else:
+		return 0
+
 def showmtime(uid):
 	return appointments[appointments['id']==uid]
+
+def removetime(uid,day,time):
+	if appoin_exists:
+		i = appointments[((appointments.id==uid)&(appointments.day==day)&(appointments.time==time))].index
+		appointments.drop(i)
+		return 1
+	else:
+		return 0
+
+def removemember(uid,email):
+	if userexists(uid):
+		i = users[((users.id==uid)&users.email==email)].index
+		users.drop(i)
+		i=appointments[(appointments.id==uid)].index
+		appointments.drop(i)
+		return 1 
+	else:
+		return -1

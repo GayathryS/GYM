@@ -100,5 +100,29 @@ def showtime():
     else:
         mod_result=[Appointments(result['id'][index],result['day'][index],result['slot'][index]) for index in range(len(result))]
         return render_template('template/allappointments.html',message=mod_result)
+
+@app.route('/removetiming',methods=['GET','POST'])
+def deletetime():
+    if request.method=='POST':
+        uid = request.form['uid']
+        day = request.form.get('day')
+        time = request.form.get('time')
+    result = removetime(uid,day,time)
+    return render_template('template/new.html',message='Processed')
+
+@app.route('/removeuser',methods=['GET','POST'])
+def deletuser():
+    if request.method=='POST':
+        uid = request.form['uid']
+        email = request.form['email']
+    result = removeuser(uid,email)
+    if result:
+        return render_template('template/new.html',message="Success")
+    else:
+        return render_template('template/new.html',message="User not found") 
+
+
+
+
 if __name__=='__main__':
     app.run()
