@@ -1,2 +1,2 @@
-web: python __init__.py
+web: python app.py
 heroku ps:scale web=1
