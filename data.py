@@ -2,8 +2,8 @@ import pandas as pd
 import uuid
 import csv
 
-users = pd.read_csv('data/users.csv')
-appointments = pd.read_csv('data/appointments.csv')
+users = pd.read_csv('home/Gayathry/GYM/data/users.csv')
+appointments = pd.read_csv('home/Gayathry/GYM/data/appointments.csv')
 
 def uid_gen():
 	uid=uuid.uuid4().hex
